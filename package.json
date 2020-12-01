@@ -4,7 +4,8 @@
   "description": "Advent of code 2020",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "exec": "ts-node"
   },
   "keywords": [
     "advent",
