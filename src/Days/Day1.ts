@@ -7,3 +7,4 @@ const values = file.toString().split("\n").map((value: string) => parseInt(value
 const expenseReportFixer = new ExpenseReportFixer();
 
 console.log(expenseReportFixer.multiplyNumbersSumTo2020(values));
+console.log(expenseReportFixer.multiplyThreeNumbersSumTo2020(values));
