@@ -1,8 +1,8 @@
+import Password from '../Model/Password';
 import PasswordSplitter from './PasswordSplitter'
-import PasswordValidator from './PasswordValidator'
 
-export default (passwords: Array<string>): number => {
+export default (passwords: Array<string>, validator: (password: Password) => boolean): number => {
     return passwords.filter((password: string) => {
-        return PasswordValidator(PasswordSplitter(password));
+        return validator(PasswordSplitter(password));
     }).length
 }
