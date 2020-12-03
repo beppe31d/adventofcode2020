@@ -1,10 +1,21 @@
 class TobogganTrajectory {
-    countTrees = (rows: Array<string>, position: number, movement: number): number => {
+    countTreesMultipleSlopes = (rows: Array<string>, slopes: Array<[number, number]>): number => {
+        return slopes
+            .map((slope: [number, number]): number => {
+                return this.countTrees(rows, 0, slope[0], slope[1]);
+            })
+            .reduce((prev: number, cur: number): number => {
+                return prev * cur;
+            })
+        ;
+    }
+
+    countTrees = (rows: Array<string>, position: number, movementRight: number, movementDown: number): number => {
         let counter = 0;
         let index = 0;
         
-        for (let i = 1; i < rows.length; i++) {            
-            index = this.buildIndex(index, movement, rows[i].length);               
+        for (let i = movementDown; i < rows.length; i += movementDown) {            
+            index = this.buildIndex(index, movementRight, rows[i].length);               
             counter += this.treeEncountered(rows[i][index]) ? 1 : 0;
         }
 
