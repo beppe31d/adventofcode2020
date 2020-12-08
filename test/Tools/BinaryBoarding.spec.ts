@@ -22,6 +22,6 @@ test('Test Highest seat number', () => {
         "FBFBBFFRLR",
         "BFFFBBFRRR",
         "BBFFBBFRLL",
-        "FFFBBBFRRR"        
+        "FFFBBBFRRR",        
     ])).toBe(820);    
 });
